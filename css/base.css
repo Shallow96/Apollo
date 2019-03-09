@@ -218,14 +218,34 @@ main {
 	color: #fff;
 	cursor: pointer;
 	padding: 0;
+
 }
 
 .action--menu {
 	pointer-events: auto;
 	position: absolute;
-	top: 1.5rem;
-	right: 1.5rem;
+	top: 40px;
+	right: 60px;
 	z-index: 1000;
+}
+
+.action--menu:before{
+	content: "MENU";
+	font-size: 18px;
+	color: #000000;
+
+}
+.action--close:before{
+	content: "MENU";
+	font-size: 18px;
+	color: #000000;
+	transform: rotate(180deg);
+	display: block;
+	margin-top: 1px;
+	top: -6px;
+	left: 6px;
+	position: relative;
+
 }
 
 .menu--open .action--menu {
@@ -235,10 +255,10 @@ main {
 .action--close {
 	position: absolute;
 	top: 1.5rem;
-	right: 1.75rem;
+	right: 60px;
 	z-index: 1000;
 	opacity: 0;
-	padding: 0 0.5rem;
+	/*padding: 0 0.5rem;*/
 }
 
 .icon--menu {
@@ -250,7 +270,7 @@ main {
 }
 
 .menu {
-	text-align: center;
+	/*text-align: center;*/
 	width: 100%;
 	height: 100vh;
 	overflow: hidden;
@@ -286,7 +306,8 @@ main {
 }
 
 .menu__item--1 .menu__item-inner {
-	background: var(--color-bg-item1);
+	background: #efefef;
+	/*background: #56309e;*/
 }
 .menu__item--2 .menu__item-inner {
 	background: var(--color-bg-item2);
@@ -322,13 +343,17 @@ main {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: url(../img/2.jpg) no-repeat 50% 50%;
+	background: url(../images/menu_left_bg.png) no-repeat 40% 60%;
 	background-size: cover;
-	transition: transform 0.8s cubic-bezier(0.2,1,0.8,1);
+	transition: 0.3s;
+}
+.menu__item-map img{
+	transition: 0.3s;
 }
 
-.menu__item-inner:hover .menu__item-map {
-	transform: scale3d(1.1,1.1,1);
+.menu__item-inner:hover .menu__item-map img {
+	transform: scale3d(1.05,1.05,1);
+	transition: 0.3s;
 }
 
 .menu__item-hoverlink {
@@ -381,10 +406,10 @@ main {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		/*justify-content: center;*/
+		/*align-items: center;*/
 		/*margin: 0 auto;*/
-		margin-left: 180px;
+		margin: 240px 0 0 180px;
 		min-height: 100vh;
 		text-align: left;
 	}
@@ -433,10 +458,10 @@ main {
 		position: fixed;
 		top: 0;
 		left: 0;
-		grid-template-columns: 50% 50%;
+		grid-template-columns: 45% 55%;
 		grid-template-rows: 100% 100%;
 		grid-template-areas: 
-            "item1 item2";
+            "item2 item1";
 	}
 	.menu__item {
 		height: 100%;
@@ -461,7 +486,7 @@ main {
 		display: block;
 	}
 	.menu__item-inner {
-		align-items: center;
+		/*align-items: center;*/
 	}
 	.label {
 		display: block;
@@ -506,8 +531,8 @@ main {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		/*align-items: center;*/
+		/*justify-content: center;*/
 	}
 	.mainmenu {
 		counter-reset: menuitem;
