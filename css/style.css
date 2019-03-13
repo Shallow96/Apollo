@@ -10,62 +10,154 @@
   font-family: 'lmromanslant10regular';
   src: url("../fonts/lmromanslant10regular.eot");
   src: url("../fonts/lmromanslant10regular.eot") format("embedded-opentype"), url("../fonts/lmromanslant10regular.woff2") format("woff2"), url("../fonts/lmromanslant10regular.woff") format("woff"), url("../fonts/lmromanslant10regular.ttf") format("truetype"), url("../fonts/lmromanslant10regular.svg#lmromanslant10regular") format("svg"); }
-main .content .content__title {
-  font: 50px 'RalewayThin'; }
-  main .content .content__title span {
-    font: 50px 'RalewayBold'; }
-main .content .content__tagline {
-  max-width: 480px;
-  font: 18px/25px 'lmromanslant10regular'; }
-main .menu .menu__item .menu__item-inner .mainmenu {
-  max-width: 615px;
-  margin-top: 180px; }
-  main .menu .menu__item .menu__item-inner .mainmenu h2 {
-    font: 50px 'RalewayThin';
-    margin: 0;
-    color: black; }
-    main .menu .menu__item .menu__item-inner .mainmenu h2 span {
-      font: 50px 'RalewayBold'; }
-    main .menu .menu__item .menu__item-inner .mainmenu h2:before {
-      content: '';
-      display: inline-block;
-      vertical-align: middle;
-      box-sizing: border-box;
-      width: 80px;
-      height: 1px;
-      background: #000;
-      margin-right: 40px; }
-  main .menu .menu__item .menu__item-inner .mainmenu p {
-    color: black;
-    font: 18px/25px 'lmromanslant10regular';
-    margin-top: 30px; }
-  main .menu .menu__item .menu__item-inner .mainmenu .social a {
-    display: inline-block;
-    width: 33px;
-    height: 33px;
+.preload {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  z-index: 120;
+  background-color: #fff;
+  animation-name: preload;
+  animation-duration: 2s; }
+  .preload h1 {
     text-align: center;
-    line-height: 35px;
-    background: #909090;
-    margin-right: 20px;
-    transition: 0.3s; }
-    main .menu .menu__item .menu__item-inner .mainmenu .social a i {
-      font-size: 18px; }
-    main .menu .menu__item .menu__item-inner .mainmenu .social a:hover {
-      border-radius: 8px;
-      transition: 0.3s;
-      color: white;
-      transform: scale(1.2); }
-      main .menu .menu__item .menu__item-inner .mainmenu .social a:hover:nth-child(4) {
-        background-color: #e60023; }
-      main .menu .menu__item .menu__item-inner .mainmenu .social a:hover:nth-child(3) {
-        background-color: #1b95e0; }
-      main .menu .menu__item .menu__item-inner .mainmenu .social a:hover:nth-child(2) {
-        background: linear-gradient(15deg, #f99b3b, #d52d79, #6756c6); }
-      main .menu .menu__item .menu__item-inner .mainmenu .social a:hover:nth-child(1) {
-        background-color: #3b5998; }
+    font-size: 40px;
+    color: black; }
 
-.truck {
-  height: 1000px; }
+@keyframes preload {
+  0% {
+    right: 0; }
+  50% {
+    right: 0; }
+  100% {
+    right: -100%; } }
+.background {
+  animation-name: front_bg;
+  animation-duration: 3s;
+  opacity: 1; }
+
+@keyframes front_bg {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes heading {
+  0% {
+    left: -1300px; }
+  60% {
+    left: -1300px; }
+  100% {
+    left: 0; } }
+@keyframes heading_p {
+  0% {
+    top: 1300px; }
+  60% {
+    top: 1300px; }
+  100% {
+    top: 70px; } }
+@keyframes menu_open {
+  0% {
+    top: -100px; }
+  80% {
+    top: -100px; }
+  100% {
+    top: 40px; } }
+.action--menu {
+  animation-name: menu_open;
+  animation-duration: 4s; }
+
+main .content {
+  position: relative; }
+  main .content .content__title {
+    font: 50px 'RalewayThin';
+    position: absolute;
+    animation-name: heading;
+    animation-duration: 3s; }
+    main .content .content__title span {
+      font: 50px 'RalewayBold'; }
+  main .content .wrapper {
+    position: absolute;
+    z-index: 1;
+    max-width: 480px;
+    top: 70px;
+    font: 18px/25px 'lmromanslant10regular';
+    animation-name: heading_p;
+    animation-duration: 3s; }
+main .menu .menu__item .menu__item-inner {
+  perspective: 40px; }
+  main .menu .menu__item .menu__item-inner .mainmenu {
+    max-width: 615px;
+    margin-top: 180px;
+    transition: 0.5s; }
+    main .menu .menu__item .menu__item-inner .mainmenu:hover {
+      transform: scale(1.1) rotateY(-1deg);
+      transition: 0.5s; }
+      main .menu .menu__item .menu__item-inner .mainmenu:hover p {
+        background-image: url(../images/plamya.gif);
+        background-size: cover;
+        color: transparent;
+        text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.94);
+        -webkit-background-clip: text;
+        transition: 0.5s; }
+      main .menu .menu__item .menu__item-inner .mainmenu:hover h2 span {
+        animation: neon .08s ease-in-out infinite alternate;
+        transition: 15s; }
+      main .menu .menu__item .menu__item-inner .mainmenu:hover .social {
+        margin-left: 20%;
+        transition: 0.5s; }
+    main .menu .menu__item .menu__item-inner .mainmenu h2 {
+      font: 50px 'RalewayThin';
+      margin: 0;
+      color: black; }
+      main .menu .menu__item .menu__item-inner .mainmenu h2 span {
+        font: 50px 'RalewayBold'; }
+      main .menu .menu__item .menu__item-inner .mainmenu h2:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        box-sizing: border-box;
+        width: 80px;
+        height: 1px;
+        background: #000;
+        margin-right: 40px; }
+    main .menu .menu__item .menu__item-inner .mainmenu p {
+      color: black;
+      font: 18px/25px 'lmromanslant10regular';
+      margin-top: 30px;
+      transition: 0.5s; }
+    main .menu .menu__item .menu__item-inner .mainmenu .social {
+      transition: 0.5s; }
+      main .menu .menu__item .menu__item-inner .mainmenu .social a {
+        display: inline-block;
+        width: 33px;
+        height: 33px;
+        text-align: center;
+        line-height: 35px;
+        background: #909090;
+        margin-right: 20px;
+        transition: 0.3s; }
+        main .menu .menu__item .menu__item-inner .mainmenu .social a i {
+          font-size: 18px; }
+        main .menu .menu__item .menu__item-inner .mainmenu .social a:nth-child(1) {
+          margin-left: 5px; }
+        main .menu .menu__item .menu__item-inner .mainmenu .social a:nth-child(2) {
+          background: linear-gradient(15deg, #909090, #909090); }
+        main .menu .menu__item .menu__item-inner .mainmenu .social a:hover {
+          border-radius: 5px;
+          transition: 0.3s;
+          color: white;
+          transform: scale(1.3); }
+          main .menu .menu__item .menu__item-inner .mainmenu .social a:hover:nth-child(4) {
+            background-color: #e60023; }
+          main .menu .menu__item .menu__item-inner .mainmenu .social a:hover:nth-child(3) {
+            background-color: #1b95e0; }
+          main .menu .menu__item .menu__item-inner .mainmenu .social a:hover:nth-child(2) {
+            background: linear-gradient(15deg, #f99b3b, #d52d79, #6756c6); }
+          main .menu .menu__item .menu__item-inner .mainmenu .social a:hover:nth-child(1) {
+            background-color: #3b5998; }
 
 .far, .fas {
   color: black;
@@ -87,5 +179,18 @@ main .menu .menu__item .menu__item-inner .mainmenu {
   top: -6px;
   left: 6px;
   position: relative; }
+
+.wave {
+  color: #000;
+  animation: 0.8s color infinite; }
+
+@keyframes color {
+  40% {
+    color: #a42c2a; } }
+@keyframes neon {
+  from {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(12, 162, 242, 0.52), 0 0 21px rgba(10, 150, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92); }
+  to {
+    text-shadow: 0 0 6px rgba(202, 226, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58), 0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88), 0 0 60px #1e84f2; } }
 
 /*# sourceMappingURL=style.css.map */

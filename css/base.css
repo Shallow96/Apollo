@@ -7,7 +7,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 
 body {
 	--color-text: #fff;
-	--color-bg: #252525;
+	--color-bg: #efefef;
 	--color-link: #fff;
 	--color-link-hover: #f20c40;
 	--color-bg-item1: #15171b;
@@ -22,7 +22,7 @@ body {
 	--color-tagline: #e2e2e2;
 	font-family: "europa", Futura, Arial, sans-serif;
 	min-height: 100vh;
-	color: #57585c;
+	color: #fff;
 	color: var(--color-text);
 	background-color: #fff;
 	background-color: var(--color-bg);
@@ -120,7 +120,7 @@ main {
 }
 
 .background {
-	perspective: 1000px;
+	perspective: 700px;
 }
 
 .background,
@@ -255,7 +255,7 @@ main {
 .action--close {
 	position: absolute;
 	top: 1.5rem;
-	right: 60px;
+	right: 40px;
 	z-index: 1000;
 	opacity: 0;
 	/*padding: 0 0.5rem;*/
@@ -349,10 +349,12 @@ main {
 }
 .menu__item-map img{
 	transition: 0.3s;
+	filter: grayscale(100%);
 }
 
 .menu__item-inner:hover .menu__item-map img {
-	transform: scale3d(1.05,1.05,1);
+	transform: scale(1.1) rotateZ(-5deg);
+	filter: grayscale(0);
 	transition: 0.3s;
 }
 

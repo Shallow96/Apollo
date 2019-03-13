@@ -70,9 +70,10 @@
                 // Using 101% instead of 100% to avoid rendering problems.
                 // In order to create the "reveal" effect, the item slides moves in one direction and its inner element in the opposite direction.
                 if ( direction === 'bt' ) {
-                    config.y = '101%';
-                    configInner.y = '-101%';
-                    configInner.x = '0%';
+                    config.x = '-101%';
+                    configInner.x = '-100%';
+                    configInner.z = '50%';
+                    configInner.y = '50%';
                 }
                 else if ( direction === 'tb' ) {
                     config.y = '-101%';
@@ -80,8 +81,10 @@
                     configInner.x = '0%';
                 }
                 else if ( direction === 'lr' ) {
-                    config.x = '-101%';
-                    configInner.x = '101%';
+                    config.x = '101%';
+                    configInner.x = '100%';
+                    configInner.z = '-50%';
+                    configInner.y = '-50%';
                 }
                 else if ( direction === 'rl' ) {
                     config.x = '101%';
