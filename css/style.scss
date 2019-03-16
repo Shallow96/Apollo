@@ -64,6 +64,31 @@ a {
   }
 }
 
+.gal_link{
+  position: absolute;
+  top: 80px;
+  right: 60px;
+  z-index: 101;
+  font-size: 18px;
+  color: #000000;
+  text-transform: uppercase;
+  text-decoration: none;
+  animation-name: gal_link;
+  animation-duration: 3.2s;
+  &:hover{
+    color: #000000;
+    text-decoration: none;
+  }
+  @include max-screen(768px){
+    top: 45px;
+    right: 30px;
+    font-size: 14px;
+  }
+  @include max-screen(576px){
+    font-size: 12px;
+  }
+}
+
 
 body {
   min-height: 100vh;
@@ -75,6 +100,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 main{
   position: relative;
   width: 100%;
@@ -85,12 +111,17 @@ main{
     z-index: 100;
     display: flex;
     flex-direction: column;
+    @include max-screen(1200px){
+      margin-top: 150px;
+      margin-left: 50px;
+
+    }
     @include max-screen(768px){
       width: 90%;
-      margin: 70px auto;
+      margin: 120px auto;
     }
     @include max-screen(576px){
-      margin-top: 80px;
+      margin-top: 60px;
 
     }
     .background {
@@ -151,10 +182,14 @@ main{
       font: 18px/25px 'lmromanslant10regular';
       animation-name: heading_p;
       animation-duration: 3s;
-      @include max-screen(576px){
+      @include max-screen(768px){
         font-size: 16px;
         line-height: 18px;
         text-align: justify;
+        box-shadow: 0 0 30px 5px #efefef;
+        background: rgba(239, 239, 239, 0.7);
+        border-radius: 20px;
+        padding: 10px;
       }
     }
   }
@@ -173,10 +208,10 @@ main{
       }
       @include max-screen(576px){
         &:nth-child(1){
-          height: 60%;
+          height: 65%;
         }
         &:nth-child(2){
-          height: 40%;
+          height: 35%;
         }
       }
       .menu__item-inner{
@@ -190,10 +225,6 @@ main{
         flex-direction: column;
         justify-content: center;
         background: #efefef;
-        @include max-screen(768px){
-          overflow: scroll;
-
-        }
         .mainmenu{
           width: 100%;
           height: 100%;
@@ -203,17 +234,25 @@ main{
           margin-top: 180px;
           transition: 0.5s;
           counter-reset: menuitem;
+          @include max-screen(1200px){
+            margin-top: 100px;
+          }
           @include max-screen(768px){
             width: 80%;
-            margin: 60px auto;
+            margin: 40px auto;
           }
           @include max-screen(576px){
+            width: 85%;
             margin-top: 30px;
+          }
+          @include max-screen(359px){
+            width: 95%;
+            margin-top: 15px;
           }
           &:hover{
             transform: scale(1.1) rotateY(-1deg);
             transition: 0.5s;
-            @include max-screen(768px){
+            @include max-screen(1200px){
               transform: none;
             }
             p{
@@ -232,7 +271,7 @@ main{
             h2{
               span{
                 animation: neon .08s ease-in-out infinite alternate;
-                transition: 15s;
+                //transition: 15s;
               }
             }
             .social{
@@ -252,6 +291,9 @@ main{
               max-width: 80%;
               font-size: 30px;
             }
+            @include max-screen(359px){
+              font-size: 25px;
+            }
             span{
               font: 50px 'RalewayBold';
               @include max-screen(767px){
@@ -259,6 +301,9 @@ main{
               }
               @include max-screen(576px){
                 font-size: 35px;
+              }
+              @include max-screen(359px){
+                font-size: 30px;
               }
             }
             &:before{
@@ -291,6 +336,9 @@ main{
               line-height: 15px;
               margin-top: 5px;
             }
+            @include max-screen(359px){
+              font-size: 12px;
+            }
           }
           .social{
             transition: 0.5s;
@@ -308,6 +356,9 @@ main{
               transition: 0.3s;
               i{
                 font-size: 18px;
+                @include max-screen(359px){
+                  font-size: 12px;
+                }
               }
               &:nth-child(1){
                 margin-left: 5px;
@@ -315,7 +366,11 @@ main{
               &:nth-child(2){
                 background: linear-gradient(15deg, #909090, #909090);
               }
-
+              @include max-screen(359px){
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+              }
               &:hover{
                 border-radius: 5px;
                 transition: 0.3s;
@@ -355,6 +410,12 @@ main{
           width: 100%;
           transition: 0.3s;
           filter: grayscale(100%);
+          position: absolute;
+          margin: auto;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
           @include max-screen(768px){
             width: auto;
             height: 100%;
@@ -386,6 +447,9 @@ main{
       color: black;
       font-size: 18px;
       margin-left: 10px;
+      @include max-screen(576px){
+        font-size: 12px;
+      }
     }
   }
   .action--menu {
@@ -404,6 +468,9 @@ main{
       color: #000000;
       @include max-screen(768px){
         font-size: 14px;
+      }
+      @include max-screen(576px){
+        font-size: 12px;
       }
     }
   }
@@ -427,11 +494,19 @@ main{
       transform: rotate(180deg);
       display: block;
       margin-top: 1px;
-      top: -6px;
-      left: 6px;
+      top: 20px;
+      left: 46px;
       position: relative;
       @include max-screen(768px){
         font-size: 14px;
+      }
+      @include max-screen(576px){
+        font-size: 12px;
+        top: 18px;
+        left: 40px;
+      }
+      @include max-screen(359px){
+        left: 30px;
       }
     }
   }
@@ -459,6 +534,7 @@ main{
 .menu--open {
   pointer-events: auto;
 }
+
 
 
 ///////////////////////...........keyframes..........
@@ -511,6 +587,7 @@ main{
   80% {top: -100px}
   100% {top: 40px}
 }
+
 @include max-screen(768px){
   @keyframes menu_open {
     0% {top: -100px}
@@ -519,14 +596,29 @@ main{
   }
 }
 
+@keyframes gal_link {
+  0% {top: -100px}
+  80% {top: -100px}
+  100% {top: 80px}
+}
+
+@include max-screen(768px){
+  @keyframes gal_link {
+    0% {top: -100px}
+    80% {top: -100px}
+    100% {top: 45px}
+  }
+}
+
 .action--menu{
   animation-name: menu_open;
-  animation-duration: 4s;
+  animation-duration: 3.5s;
 }
 
 @keyframes color {
   40% {color: #a42c2a;}
 }
+
 
 @keyframes neon {
   from {text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(12, 162, 242, 0.52), 0 0 21px rgba(10, 150, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);}
